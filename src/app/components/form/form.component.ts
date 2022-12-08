@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {IDataGithub} from "../../data";
 import {GithubService} from "../../services/github.service";
 import {ModalService} from "../../services/modal.service";
@@ -12,7 +12,7 @@ export class FormComponent {
   title = 'Search Github Profile'
 
   userName: string = '';
-  @Input() response: IDataGithub;
+  response: IDataGithub;
 
   constructor( private githubService: GithubService,
                public modalService: ModalService ) { }
@@ -20,7 +20,7 @@ export class FormComponent {
   public search(): void {
     this.githubService.getAll(this.userName).subscribe((res) => {
       this.response = res;
-      // console.log(this.response);
+      console.log(this.response);
     })
   }
 }

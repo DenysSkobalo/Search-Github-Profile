@@ -12,7 +12,10 @@ export class GithubService {
 
   constructor(private http: HttpClient) { }
 
+  response: IDataGithub;
+
   public getAll(userName: string): Observable<IDataGithub> {
+    // console.log(userName)
     return this.http.get<IDataGithub>('https://api.github.com/users/' + userName);
   }
 }

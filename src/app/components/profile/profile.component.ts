@@ -1,6 +1,7 @@
-import {Component, Output} from '@angular/core';
-import {IDataGithub} from "../../data";
+import {Component, Input} from '@angular/core';
 import {ModalService} from "../../services/modal.service";
+import {GithubService} from "../../services/github.service";
+import {IDataGithub} from "../../data";
 
 @Component({
   selector: 'app-profile',
@@ -9,8 +10,9 @@ import {ModalService} from "../../services/modal.service";
 })
 export class ProfileComponent {
 
-  @Output() response: IDataGithub
+  constructor( public modalService: ModalService,
+               public githubService: GithubService ) { }
 
-  constructor( public modalService: ModalService ) { }
+  @Input() response: IDataGithub
 
 }
