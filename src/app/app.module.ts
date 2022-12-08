@@ -7,11 +7,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { ModalComponent } from './components/modal/modal.component';
+import { FormComponent } from './components/form/form.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent
+    ModalComponent,
+    FormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

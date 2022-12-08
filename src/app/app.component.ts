@@ -11,18 +11,4 @@ import {ModalService} from "./services/modal.service";
 })
 export class AppComponent  {
 
-  title = 'Search Github Profile'
-
-   userName: string = '';
-   response: IDataGithub;
-
-  constructor( private githubService: GithubService,
-               public modalService: ModalService ) { }
-
-  public search(): void {
-    this.githubService.getAll(this.userName).subscribe((res) => {
-      this.response = res;
-      // console.log(this.response);
-    })
-  }
 }
