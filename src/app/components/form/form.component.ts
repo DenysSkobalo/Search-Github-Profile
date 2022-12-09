@@ -9,18 +9,18 @@ import {ModalService} from "../../services/modal.service";
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
-  title = 'Search Github Profile'
+  public title = 'Search Github Profile';
 
-  userName: string = '';
-  response: IDataGithub;
+  public userName: string = '';
 
-  constructor( private githubService: GithubService,
-               public modalService: ModalService ) { }
+  public response: IDataGithub;
+
+  constructor(
+    private githubService: GithubService,
+    public modalService: ModalService
+  ) { }
 
   public search(): void {
-    this.githubService.getAll(this.userName).subscribe((res) => {
-      this.response = res;
-      console.log(this.response);
-    })
+    this.githubService.getAll(this.userName).subscribe(res => this.response = res);
   }
 }

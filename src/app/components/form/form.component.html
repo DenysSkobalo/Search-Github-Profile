@@ -26,4 +26,4 @@
   </div>
 </div>
 
-<app-profile *ngIf="response"></app-profile>
+<app-profile *ngIf="response" [response] = 'this.response'></app-profile>

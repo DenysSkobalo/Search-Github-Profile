@@ -10,9 +10,10 @@ import {IDataGithub} from "../../data";
 })
 export class ProfileComponent {
 
-  constructor( public modalService: ModalService,
-               public githubService: GithubService ) { }
+  constructor(
+    public modalService: ModalService,
+    public githubService: GithubService
+  ) { }
 
-  @Input() response: IDataGithub
-
+  @Input() response: IDataGithub;
 }
